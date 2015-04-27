@@ -1,0 +1,11 @@
+
+*.iml
+*.sh
+*.swp
+
+# all the maven target directories
+# Note: use absolute paths (starting with /)
+# to prevent ignoring non-maven directories named `target'
+bin
+target
+.idea

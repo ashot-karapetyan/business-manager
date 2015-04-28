@@ -35,16 +35,16 @@
 
     <!--   Configures the authentication manager bean which processes authentication requests.    -->
     <security:authentication-manager alias="authenticationManager">
-        <security:authentication-provider user-service-ref="bmUserDetailsService">
+        <security:authentication-provider user-service-ref="userDetailsService">
             <security:password-encoder hash="md5"/>
         </security:authentication-provider>
     </security:authentication-manager>
 
 
     <!-- This bean is load the user specific data when form login is used. -->
-    <bean id="bmUserDetailsService" class="com.businessmanager.security.BMUserDetailsService">
-        <property name="userService" ref="userService"/>
-    </bean>
+    <bean id="userDetailsService" class="com.businessmanager.service.UserService" />
+
+    <bean id="userDao" class="com.businessmanager.dao.UserDaoImpl"/>
 
     <!-- Login Success Handler -->
     <bean id="authenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
@@ -60,4 +60,5 @@
     <bean id="logoutSuccessHandler" class="org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler">
         <property name="defaultTargetUrl" value="/welcome.htm" />
     </bean>
+
 </beans>

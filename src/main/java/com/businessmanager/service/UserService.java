@@ -1,61 +1,51 @@
 package com.businessmanager.service;
 
-import com.businessmanager.security.BMUserDetails;
+import com.businessmanager.dao.UserDao;
+import com.businessmanager.model.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-
-/**
- * Responsible for Service layer related to Users, UserConnection persistent models.
- */
+import java.util.Set;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
-    public UserDetails loadUserByUsername(String username) {
-        BMUserDetails fakeUserDetails = new BMUserDetails();
-        fakeUserDetails.setUsername(username);
-        fakeUserDetails.setPassword("b1282c1dbc170a3f4bf470b7edb080c3"); // md5("fakepassword")
-        fakeUserDetails.setEnabled(true);
+    @Autowired
+    UserDao userDao;
 
-        List<GrantedAuthority> authorityList = new ArrayList<GrantedAuthority>();
-        authorityList.add(new SimpleGrantedAuthority("ROLE_USER"));
-        fakeUserDetails.setGrantedAuthority(authorityList);
-        return fakeUserDetails;
+    @Transactional(readOnly=true)
+    public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
+        com.businessmanager.model.User user = userDao.findByUserName(username);
+        List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRole());
+
+        return buildUserForAuthentication(user, authorities);
     }
 
-//    @Autowired
-//    UserDBManager userDBManager;
-//
-//    /**
-//     * Load user by username.
-//     * @param username     Username.
-//     * @return          DistributionUserDetails object.
-//     */
-//    public BMUserDetails loadUserByUsername(String username) {
-//        UserDto userDto = userDBManager.fetchUserByUsername(username);
-//        return fillUserDetails(userDto);
-//    }
-//
-//    /**
-//     * Fill USerDetails object from data in userDto.
-//     * @param userDto       UserDto object.
-//     * @return          DistributionUserDetails object.
-//     */
-//    private BMUserDetails fillUserDetails(UserDto userDto) {
-//        BMUserDetails userDetails = new BMUserDetails();
-//        userDetails.setUsername(userDto.getUsername());
-//        userDetails.setPassword(userDto.getPassword());
-//        userDetails.setEnabled(true);
-//
-//        List<GrantedAuthority> authorityList = new ArrayList<GrantedAuthority>();
-//        authorityList.add(new SimpleGrantedAuthority("ROLE_USER"));
-//        userDetails.setGrantedAuthority(authorityList);
-//        return userDetails;
-//    }
+    /**
+     * Convert model User to spring User
+     * @param user
+     * @param authorities
+     * @return
+     */
+    private User buildUserForAuthentication(com.businessmanager.model.User user, List<GrantedAuthority> authorities) {
+        return new User(user.getUsername(), user.getPassword(), user.isEnabled(), true, true, true, authorities);
+    }
+
+    private List<GrantedAuthority> buildUserAuthority(Set<UserRole> userRoles) {
+        Set<GrantedAuthority> grantedAuthoritySet = new HashSet<GrantedAuthority>();
+        for (UserRole userRole : userRoles) {
+            grantedAuthoritySet.add(new SimpleGrantedAuthority(userRole.getRole()));
+        }
+        return new ArrayList<GrantedAuthority>(grantedAuthoritySet);
+    }
 }

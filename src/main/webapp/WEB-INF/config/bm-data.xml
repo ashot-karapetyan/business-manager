@@ -10,32 +10,41 @@
                 http://www.springframework.org/schema/tx
                 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
-    <!--<context:component-scan base-package="com.armart.distribution.db"/>-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <context:component-scan base-package="com.businessmanager.dao"/>
 
-    <!--<context:property-placeholder location="classpath:/conf/*.properties"/>-->
+    <context:property-placeholder location="WEB-INF/config/database.properties"/>
 
-    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
-        <!--<property name="driverClassName" value="${driver}"/>-->
-        <!--<property name="url" value="${url}"/>-->
-        <!--<property name="username" value="${db_username}"/>-->
-        <!--<property name="password" value="${db_password}"/>-->
-    <!--</bean>-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
 
-    <!--&lt;!&ndash; MyBatis Data Mapper scanning.  Mappers need to be in this package or a subpackage of this. &ndash;&gt;-->
-    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
-        <!--<property name="basePackage" value="com.armart.distribution.db.dao" />-->
-    <!--</bean>-->
+    <!-- Hibernate session factory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
 
-    <!--&lt;!&ndash; MyBatis needs the sqlSessionFactory Bean defined. &ndash;&gt;-->
-    <!--<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
-        <!--<property name="dataSource" ref="dataSource" />-->
-        <!--<property name="configLocation" value="/WEB-INF/sql-map-config.xml"/>-->
+        <property name="annotatedClasses">
+            <list>
+                <value>com.businessmanager.model.User</value>
+                <value>com.businessmanager.model.UserRole</value>
+            </list>
+        </property>
 
-    <!--</bean>-->
+    </bean>
 
-    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
-        <!--<property name="dataSource" ref="dataSource"/>-->
-    <!--</bean>-->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
 
 </beans>

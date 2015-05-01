@@ -44,8 +44,6 @@
     <!-- This bean is load the user specific data when form login is used. -->
     <bean id="userDetailsService" class="com.businessmanager.service.UserService" />
 
-    <bean id="userDao" class="com.businessmanager.dao.UserDaoImpl"/>
-
     <!-- Login Success Handler -->
     <bean id="authenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
         <property name="defaultTargetUrl" value="/dashboard.htm"/>

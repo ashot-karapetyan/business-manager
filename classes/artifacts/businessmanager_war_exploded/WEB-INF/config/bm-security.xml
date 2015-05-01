@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:http="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd
+               http://www.springframework.org/schema/security
+               http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+    <!-- Static resources such as CSS and JS files are ignored by Spring Security -->
+    <security:http pattern="/images/**" security="none" />
+
+    <security:http use-expressions="true">
+        <!-- Configures form login -->
+        <security:form-login
+                login-processing-url="/login.htm"
+                authentication-failure-handler-ref="authenticationFailureHandler"
+                authentication-success-handler-ref="authenticationSuccessHandler"
+                username-parameter="username"
+                password-parameter="password"/>
+
+        <!-- Configures the logout function -->
+        <security:logout
+                logout-url="/logout.htm"
+                success-handler-ref="logoutSuccessHandler"
+                delete-cookies="JSESSIONID"/>
+
+        <!-- Anyone can access these urls -->
+        <security:intercept-url pattern="/welcome.htm" access="permitAll"/>
+
+        <!-- The rest of our application is protected. -->
+        <security:intercept-url pattern="/WEB-INF" access="hasRole('ROLE_USER')"/>
+    </security:http>
+
+    <!--   Configures the authentication manager bean which processes authentication requests.    -->
+    <security:authentication-manager alias="authenticationManager">
+        <security:authentication-provider user-service-ref="userDetailsService">
+            <security:password-encoder hash="md5"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+
+    <!-- This bean is load the user specific data when form login is used. -->
+    <bean id="userDetailsService" class="com.businessmanager.service.UserService" />
+
+    <!-- Login Success Handler -->
+    <bean id="authenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
+        <property name="defaultTargetUrl" value="/dashboard.htm"/>
+    </bean>
+
+    <!-- Login Failure Handler -->
+    <bean id="authenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+        <property name="defaultFailureUrl" value="/welcome.htm?error=true"/>
+    </bean>
+
+    <!-- Logout Success Handler -->
+    <bean id="logoutSuccessHandler" class="org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler">
+        <property name="defaultTargetUrl" value="/welcome.htm" />
+    </bean>
+
+</beans>

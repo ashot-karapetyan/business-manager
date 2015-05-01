@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <mappers>
+        <mapper resource="com/businessmanager/db/sqlmap/sql/ActionTypeMapper.xml"/>
+        <mapper resource="com/businessmanager/db/sqlmap/sql/BusinessMapper.xml"/>
+        <mapper resource="com/businessmanager/db/sqlmap/sql/LogMapper.xml"/>
+        <mapper resource="com/businessmanager/db/sqlmap/sql/MarketMapper.xml"/>
+        <mapper resource="com/businessmanager/db/sqlmap/sql/ProductMapper.xml"/>
+        <mapper resource="com/businessmanager/db/sqlmap/sql/UserBusinessMapper.xml"/>
+        <mapper resource="com/businessmanager/db/sqlmap/sql/UserMapper.xml"/>
+        <mapper resource="com/businessmanager/db/sqlmap/sql/UserRoleMapper.xml"/>
+    </mappers>
+</configuration>

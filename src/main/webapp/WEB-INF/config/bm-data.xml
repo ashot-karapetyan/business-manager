@@ -11,7 +11,7 @@
                 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
-    <context:component-scan base-package="com.businessmanager.dao"/>
+    <context:component-scan base-package="com.businessmanager.db"/>
 
     <context:property-placeholder location="WEB-INF/config/database.properties"/>
 
@@ -22,29 +22,45 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
+    <!--<context:component-scan base-package="com.businessmanager.dao"/>-->
+
     <!-- Hibernate session factory -->
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-            </props>
-        </property>
+    <!--<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">-->
+        <!--<property name="dataSource" ref="dataSource"/>-->
+        <!--<property name="hibernateProperties">-->
+            <!--<props>-->
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>-->
+                <!--<prop key="hibernate.show_sql">true</prop>-->
+            <!--</props>-->
+        <!--</property>-->
 
-        <property name="annotatedClasses">
-            <list>
-                <value>com.businessmanager.model.User</value>
-                <value>com.businessmanager.model.UserRole</value>
-            </list>
-        </property>
+        <!--<property name="annotatedClasses">-->
+            <!--<list>-->
+                <!--<value>com.businessmanager.model.User</value>-->
+                <!--<value>com.businessmanager.model.UserRole</value>-->
+            <!--</list>-->
+        <!--</property>-->
 
-    </bean>
+    <!--</bean>-->
+
+    <!--<bean id="transactionManager"-->
+          <!--class="org.springframework.orm.hibernate4.HibernateTransactionManager">-->
+        <!--<property name="dataSource" ref="dataSource" />-->
+        <!--<property name="sessionFactory" ref="sessionFactory" />-->
+    <!--</bean>-->
 
     <bean id="transactionManager"
-          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-        <property name="dataSource" ref="dataSource" />
-        <property name="sessionFactory" ref="sessionFactory" />
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="/WEB-INF/config/sql-map-config.xml"/>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.businessmanager.db.dao"/>
     </bean>
 
 </beans>

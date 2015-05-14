@@ -312,6 +312,66 @@ public class ActionTypeCondition {
             return (Criteria) this;
         }
 
+        public Criteria andModelIdIsNull() {
+            addCriterion("action_type.model_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdIsNotNull() {
+            addCriterion("action_type.model_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdEqualTo(Integer value) {
+            addCriterion("action_type.model_id =", value, "modelId");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdNotEqualTo(Integer value) {
+            addCriterion("action_type.model_id <>", value, "modelId");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdGreaterThan(Integer value) {
+            addCriterion("action_type.model_id >", value, "modelId");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("action_type.model_id >=", value, "modelId");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdLessThan(Integer value) {
+            addCriterion("action_type.model_id <", value, "modelId");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdLessThanOrEqualTo(Integer value) {
+            addCriterion("action_type.model_id <=", value, "modelId");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdIn(List<Integer> values) {
+            addCriterion("action_type.model_id in", values, "modelId");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdNotIn(List<Integer> values) {
+            addCriterion("action_type.model_id not in", values, "modelId");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdBetween(Integer value1, Integer value2) {
+            addCriterion("action_type.model_id between", value1, value2, "modelId");
+            return (Criteria) this;
+        }
+
+        public Criteria andModelIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("action_type.model_id not between", value1, value2, "modelId");
+            return (Criteria) this;
+        }
+
         public Criteria andNameIsNull() {
             addCriterion("action_type.name is null");
             return (Criteria) this;
@@ -382,183 +442,63 @@ public class ActionTypeCondition {
             return (Criteria) this;
         }
 
-        public Criteria andAIsNull() {
-            addCriterion("action_type.a is null");
+        public Criteria andCoefficentIsNull() {
+            addCriterion("action_type.coefficent is null");
             return (Criteria) this;
         }
 
-        public Criteria andAIsNotNull() {
-            addCriterion("action_type.a is not null");
+        public Criteria andCoefficentIsNotNull() {
+            addCriterion("action_type.coefficent is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAEqualTo(Float value) {
-            addCriterion("action_type.a =", value, "a");
+        public Criteria andCoefficentEqualTo(Float value) {
+            addCriterion("action_type.coefficent =", value, "coefficent");
             return (Criteria) this;
         }
 
-        public Criteria andANotEqualTo(Float value) {
-            addCriterion("action_type.a <>", value, "a");
+        public Criteria andCoefficentNotEqualTo(Float value) {
+            addCriterion("action_type.coefficent <>", value, "coefficent");
             return (Criteria) this;
         }
 
-        public Criteria andAGreaterThan(Float value) {
-            addCriterion("action_type.a >", value, "a");
+        public Criteria andCoefficentGreaterThan(Float value) {
+            addCriterion("action_type.coefficent >", value, "coefficent");
             return (Criteria) this;
         }
 
-        public Criteria andAGreaterThanOrEqualTo(Float value) {
-            addCriterion("action_type.a >=", value, "a");
+        public Criteria andCoefficentGreaterThanOrEqualTo(Float value) {
+            addCriterion("action_type.coefficent >=", value, "coefficent");
             return (Criteria) this;
         }
 
-        public Criteria andALessThan(Float value) {
-            addCriterion("action_type.a <", value, "a");
+        public Criteria andCoefficentLessThan(Float value) {
+            addCriterion("action_type.coefficent <", value, "coefficent");
             return (Criteria) this;
         }
 
-        public Criteria andALessThanOrEqualTo(Float value) {
-            addCriterion("action_type.a <=", value, "a");
+        public Criteria andCoefficentLessThanOrEqualTo(Float value) {
+            addCriterion("action_type.coefficent <=", value, "coefficent");
             return (Criteria) this;
         }
 
-        public Criteria andAIn(List<Float> values) {
-            addCriterion("action_type.a in", values, "a");
+        public Criteria andCoefficentIn(List<Float> values) {
+            addCriterion("action_type.coefficent in", values, "coefficent");
             return (Criteria) this;
         }
 
-        public Criteria andANotIn(List<Float> values) {
-            addCriterion("action_type.a not in", values, "a");
+        public Criteria andCoefficentNotIn(List<Float> values) {
+            addCriterion("action_type.coefficent not in", values, "coefficent");
             return (Criteria) this;
         }
 
-        public Criteria andABetween(Float value1, Float value2) {
-            addCriterion("action_type.a between", value1, value2, "a");
+        public Criteria andCoefficentBetween(Float value1, Float value2) {
+            addCriterion("action_type.coefficent between", value1, value2, "coefficent");
             return (Criteria) this;
         }
 
-        public Criteria andANotBetween(Float value1, Float value2) {
-            addCriterion("action_type.a not between", value1, value2, "a");
-            return (Criteria) this;
-        }
-
-        public Criteria andBIsNull() {
-            addCriterion("action_type.b is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBIsNotNull() {
-            addCriterion("action_type.b is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBEqualTo(Float value) {
-            addCriterion("action_type.b =", value, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andBNotEqualTo(Float value) {
-            addCriterion("action_type.b <>", value, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andBGreaterThan(Float value) {
-            addCriterion("action_type.b >", value, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andBGreaterThanOrEqualTo(Float value) {
-            addCriterion("action_type.b >=", value, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andBLessThan(Float value) {
-            addCriterion("action_type.b <", value, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andBLessThanOrEqualTo(Float value) {
-            addCriterion("action_type.b <=", value, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andBIn(List<Float> values) {
-            addCriterion("action_type.b in", values, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andBNotIn(List<Float> values) {
-            addCriterion("action_type.b not in", values, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andBBetween(Float value1, Float value2) {
-            addCriterion("action_type.b between", value1, value2, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andBNotBetween(Float value1, Float value2) {
-            addCriterion("action_type.b not between", value1, value2, "b");
-            return (Criteria) this;
-        }
-
-        public Criteria andCIsNull() {
-            addCriterion("action_type.c is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCIsNotNull() {
-            addCriterion("action_type.c is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCEqualTo(Float value) {
-            addCriterion("action_type.c =", value, "c");
-            return (Criteria) this;
-        }
-
-        public Criteria andCNotEqualTo(Float value) {
-            addCriterion("action_type.c <>", value, "c");
-            return (Criteria) this;
-        }
-
-        public Criteria andCGreaterThan(Float value) {
-            addCriterion("action_type.c >", value, "c");
-            return (Criteria) this;
-        }
-
-        public Criteria andCGreaterThanOrEqualTo(Float value) {
-            addCriterion("action_type.c >=", value, "c");
-            return (Criteria) this;
-        }
-
-        public Criteria andCLessThan(Float value) {
-            addCriterion("action_type.c <", value, "c");
-            return (Criteria) this;
-        }
-
-        public Criteria andCLessThanOrEqualTo(Float value) {
-            addCriterion("action_type.c <=", value, "c");
-            return (Criteria) this;
-        }
-
-        public Criteria andCIn(List<Float> values) {
-            addCriterion("action_type.c in", values, "c");
-            return (Criteria) this;
-        }
-
-        public Criteria andCNotIn(List<Float> values) {
-            addCriterion("action_type.c not in", values, "c");
-            return (Criteria) this;
-        }
-
-        public Criteria andCBetween(Float value1, Float value2) {
-            addCriterion("action_type.c between", value1, value2, "c");
-            return (Criteria) this;
-        }
-
-        public Criteria andCNotBetween(Float value1, Float value2) {
-            addCriterion("action_type.c not between", value1, value2, "c");
+        public Criteria andCoefficentNotBetween(Float value1, Float value2) {
+            addCriterion("action_type.coefficent not between", value1, value2, "coefficent");
             return (Criteria) this;
         }
 

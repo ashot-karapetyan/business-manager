@@ -16,13 +16,12 @@
 
 </head>
 <body >
-dashboard
+<h1>Dashboard</h1>
 
 <div align="center">
-    <h1>Hello <security:authentication property="principal.username"/> !!!</h1>
+    <h2>Hello <security:authentication property="principal.username"/> !!!</h2><a href="/logout.htm">Logout</a>
 </div>
 
-<a href="/logout.htm">Logout</a>
 
 </body>
 </html>

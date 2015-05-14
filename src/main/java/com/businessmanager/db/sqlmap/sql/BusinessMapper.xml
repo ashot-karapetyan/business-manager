@@ -270,4 +270,13 @@
       #{parm.name}, #{parm.addressId}, #{parm.modelId}
     </foreach>
   </insert>
+
+  <!--Custom Queries-->
+  <select id="selectBusinessesByUsername" parameterType="com.businessmanager.db.dto.BusinessCondition" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM business INNER JOIN user_business
+    ON business.`id` = user_business.`business_id`
+    WHERE user_business.`username` = #{username,jdbcType=VARCHAR}
+  </select>
 </mapper>

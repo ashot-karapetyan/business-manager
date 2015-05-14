@@ -8,8 +8,8 @@
     <context id="DB2Tables" targetRuntime="org.mybatis.generator.codegen.mybatis3.custom.IntrospectedTableMyBatis3Custom">
         <plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
             <property name="fileName" value="sql-map-config.xml" />
-            <property name="targetPackage" value="WEB-INF"/>
-            <property name="targetProject" value="src/main/webapp/WEB-INF/config"/>
+            <property name="targetPackage" value="config"/>
+            <property name="targetProject" value="src/main/webapp/WEB-INF"/>
         </plugin>
         <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
@@ -65,7 +65,7 @@
             <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
         </table>
 
-        <table tableName="market" alias="market">
+        <table tableName="destination" alias="destination">
             <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
         </table>
 

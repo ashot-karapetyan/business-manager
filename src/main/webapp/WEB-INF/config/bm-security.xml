@@ -46,7 +46,7 @@
 
     <!-- Login Success Handler -->
     <bean id="authenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
-        <property name="defaultTargetUrl" value="/dashboard.htm"/>
+        <property name="defaultTargetUrl" value="/home.htm"/>
     </bean>
 
     <!-- Login Failure Handler -->

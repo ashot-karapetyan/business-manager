@@ -101,4 +101,11 @@ public interface BusinessDAO {
      * @mbggenerated
      */
     void insertList(@Param("recordList") List<BusinessDto> values);
+
+    /**
+     * Select business by username.
+     * @param username  User username.
+     * @return List of business dto.
+     */
+    List<BusinessDto> selectBusinessesByUsername(@Param("username") String username);
 }

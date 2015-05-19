@@ -1,0 +1,14 @@
+<polymer-element name="di-button" extends="paper-button" attributes="type" on-click="{{clickHandler}}" assetpath="/bower_components/di-button/">
+    <script>
+        Polymer("di-button", {
+            clickHandler: function() {
+                if(this.type === "submit") {
+                    this.fire("core-signal", {
+                        name:"submit",
+                        data:this
+                    })
+                }
+            }
+        });
+    </script>
+</polymer-element>

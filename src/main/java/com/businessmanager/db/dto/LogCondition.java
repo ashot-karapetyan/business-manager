@@ -372,63 +372,63 @@ public class LogCondition {
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdIsNull() {
-            addCriterion("log.start_destination_id is null");
+        public Criteria andProviderIdIsNull() {
+            addCriterion("log.provider_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdIsNotNull() {
-            addCriterion("log.start_destination_id is not null");
+        public Criteria andProviderIdIsNotNull() {
+            addCriterion("log.provider_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdEqualTo(Integer value) {
-            addCriterion("log.start_destination_id =", value, "startDestinationId");
+        public Criteria andProviderIdEqualTo(Integer value) {
+            addCriterion("log.provider_id =", value, "providerId");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdNotEqualTo(Integer value) {
-            addCriterion("log.start_destination_id <>", value, "startDestinationId");
+        public Criteria andProviderIdNotEqualTo(Integer value) {
+            addCriterion("log.provider_id <>", value, "providerId");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdGreaterThan(Integer value) {
-            addCriterion("log.start_destination_id >", value, "startDestinationId");
+        public Criteria andProviderIdGreaterThan(Integer value) {
+            addCriterion("log.provider_id >", value, "providerId");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("log.start_destination_id >=", value, "startDestinationId");
+        public Criteria andProviderIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("log.provider_id >=", value, "providerId");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdLessThan(Integer value) {
-            addCriterion("log.start_destination_id <", value, "startDestinationId");
+        public Criteria andProviderIdLessThan(Integer value) {
+            addCriterion("log.provider_id <", value, "providerId");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdLessThanOrEqualTo(Integer value) {
-            addCriterion("log.start_destination_id <=", value, "startDestinationId");
+        public Criteria andProviderIdLessThanOrEqualTo(Integer value) {
+            addCriterion("log.provider_id <=", value, "providerId");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdIn(List<Integer> values) {
-            addCriterion("log.start_destination_id in", values, "startDestinationId");
+        public Criteria andProviderIdIn(List<Integer> values) {
+            addCriterion("log.provider_id in", values, "providerId");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdNotIn(List<Integer> values) {
-            addCriterion("log.start_destination_id not in", values, "startDestinationId");
+        public Criteria andProviderIdNotIn(List<Integer> values) {
+            addCriterion("log.provider_id not in", values, "providerId");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdBetween(Integer value1, Integer value2) {
-            addCriterion("log.start_destination_id between", value1, value2, "startDestinationId");
+        public Criteria andProviderIdBetween(Integer value1, Integer value2) {
+            addCriterion("log.provider_id between", value1, value2, "providerId");
             return (Criteria) this;
         }
 
-        public Criteria andStartDestinationIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("log.start_destination_id not between", value1, value2, "startDestinationId");
+        public Criteria andProviderIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("log.provider_id not between", value1, value2, "providerId");
             return (Criteria) this;
         }
 
@@ -492,63 +492,63 @@ public class LogCondition {
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdIsNull() {
-            addCriterion("log.end_destination_id is null");
+        public Criteria andMarketIdIsNull() {
+            addCriterion("log.market_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdIsNotNull() {
-            addCriterion("log.end_destination_id is not null");
+        public Criteria andMarketIdIsNotNull() {
+            addCriterion("log.market_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdEqualTo(Integer value) {
-            addCriterion("log.end_destination_id =", value, "endDestinationId");
+        public Criteria andMarketIdEqualTo(Integer value) {
+            addCriterion("log.market_id =", value, "marketId");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdNotEqualTo(Integer value) {
-            addCriterion("log.end_destination_id <>", value, "endDestinationId");
+        public Criteria andMarketIdNotEqualTo(Integer value) {
+            addCriterion("log.market_id <>", value, "marketId");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdGreaterThan(Integer value) {
-            addCriterion("log.end_destination_id >", value, "endDestinationId");
+        public Criteria andMarketIdGreaterThan(Integer value) {
+            addCriterion("log.market_id >", value, "marketId");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("log.end_destination_id >=", value, "endDestinationId");
+        public Criteria andMarketIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("log.market_id >=", value, "marketId");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdLessThan(Integer value) {
-            addCriterion("log.end_destination_id <", value, "endDestinationId");
+        public Criteria andMarketIdLessThan(Integer value) {
+            addCriterion("log.market_id <", value, "marketId");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdLessThanOrEqualTo(Integer value) {
-            addCriterion("log.end_destination_id <=", value, "endDestinationId");
+        public Criteria andMarketIdLessThanOrEqualTo(Integer value) {
+            addCriterion("log.market_id <=", value, "marketId");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdIn(List<Integer> values) {
-            addCriterion("log.end_destination_id in", values, "endDestinationId");
+        public Criteria andMarketIdIn(List<Integer> values) {
+            addCriterion("log.market_id in", values, "marketId");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdNotIn(List<Integer> values) {
-            addCriterion("log.end_destination_id not in", values, "endDestinationId");
+        public Criteria andMarketIdNotIn(List<Integer> values) {
+            addCriterion("log.market_id not in", values, "marketId");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdBetween(Integer value1, Integer value2) {
-            addCriterion("log.end_destination_id between", value1, value2, "endDestinationId");
+        public Criteria andMarketIdBetween(Integer value1, Integer value2) {
+            addCriterion("log.market_id between", value1, value2, "marketId");
             return (Criteria) this;
         }
 
-        public Criteria andEndDestinationIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("log.end_destination_id not between", value1, value2, "endDestinationId");
+        public Criteria andMarketIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("log.market_id not between", value1, value2, "marketId");
             return (Criteria) this;
         }
 

@@ -65,7 +65,11 @@
             <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
         </table>
 
-        <table tableName="destination" alias="destination">
+        <table tableName="market" alias="market">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+        </table>
+
+        <table tableName="provider" alias="provider">
             <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
         </table>
 

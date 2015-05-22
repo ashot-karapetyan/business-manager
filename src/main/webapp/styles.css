@@ -19574,7 +19574,7 @@ h1,h2,h3,h4,h5,h6
 .content a
 {
     color:#009688;
-    text-decoration:underline
+    /*text-decoration:underline*/
 }
 .page-content
 {
@@ -20844,6 +20844,12 @@ html /deep/ .type-caption
 {
     width:100%;
     max-width:800px
+}
+.card-min400
+{
+    width:100%;
+    max-width:400px;
+    min-width: 350px;
 }
 .card-padded
 {

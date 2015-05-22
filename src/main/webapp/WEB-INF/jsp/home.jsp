@@ -32,6 +32,9 @@
         <link rel="import" href="bower_components/core-menu/core-submenu.html">
 
         <link rel="import" href="bower_components/paper-item/paper-item.html">
+        <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+        <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+        <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -77,27 +80,47 @@
                 </core-scroll-header-panel>
                 <core-scroll-header-panel main>
                     <core-toolbar class="toolbar toolbar-primary">
-                        <paper-icon-button role="button" tabindex="0" icon="menu" class="hidden-sm" data-action="toggle-drawer" aria-label="menu"></paper-icon-button>
-                        <h3>Welcome to Business cycle</h3>
+                        <paper-icon-button role="button" tabindex="0" icon="menu" class="hidden-sm" core-drawer-toggle aria-label="menu"></paper-icon-button>
+                        <h3>Businesses</h3>
                     </core-toolbar>
                     <div class="content">
-                        <div horizontal layout class="welcome">
-                            <paper-shadow z="2" class="card card-min800 card-padded">
-                                <h1 style="margin-bottom: 1.5em;">Let's get started</h1>
-                                <img src="/images/ry.png" style="-webkit-border-radius: 150px; -moz-border-radius: 150px; width: 15%; float:left; margin: -20px 20px 0 0;">
-                                <p>
-                                    Next step is to schedule a 30-min chat with Ry, our product co-founder.
-                                    He will walk through the product, answer any questions, and
-                                    get you on the right track.
-                                </p>
-                                <div class="panel-body"></div>
-                            </paper-shadow>
+                        <div horizontal layout wrap around-justified class="welcome">
+                            <c:forEach var="business" items="${businesses}">
+                                <a href="/dashboard/${business.modelId}/${business.id}">
+                                    <paper-shadow z="3" animated class="card card-min400 card-padded">
+                                        <h1 style="margin-bottom: 1.5em;">${business.name}</h1>
+                                        <img src="/images/fish-logo.png" style="-webkit-border-radius: 150px;
+                                         -moz-border-radius: 150px; width: 50%; float:left; margin: -20px 20px 0 0;">
+                                        <p style="color: #000;">${business.description}</p>
+                                        <div class="panel-body"></div>
+                                    </paper-shadow>
+                                </a>
+                            </c:forEach>
                         </div>
+                        <paper-fab role="button" tabindex="0" icon="add" class="fab-bottom" aria-label="add"></paper-fab>
                     </div>
                 </core-scroll-header-panel>
             </core-drawer-panel>
         </div>
+        <script>
+            window.onload = function() {
+                var cards = document.getElementsByTagName('paper-shadow');
+                for(var i = 0; i < cards.length; i++) {
+                    cards[i].addEventListener("mouseover", function(e) {
+                        var target = e.target;
+                        if(target.tagName == "PAPER-SHADOW") {
+                            target.setZ(5);
+                        }
+                    });
+                    cards[i].addEventListener("mouseleave", function(e) {
+                        var target = e.target;
+                        if(target.tagName == "PAPER-SHADOW") {
+                            target.setZ(3);
+                        }
+                    });
+                }
+            }
+        </script>
     </body>
-
 </html>
 

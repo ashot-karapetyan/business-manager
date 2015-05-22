@@ -1,7 +1,7 @@
 -- // populate test data
 -- Migration SQL that makes the change goes here.
-INSERT INTO `businessmanager`.`business` (`id`, `name`, `address_id`, `model_id`) VALUES ('1', 'Fish', '1', '1');
-INSERT INTO `businessmanager`.`business` (`id`, `name`, `address_id`, `model_id`) VALUES ('2', 'Caviar', '1', '1');
+INSERT INTO `businessmanager`.`business` (`id`, `name`, `address_id`, `model_id`) VALUES ('1', 'Fish Distribution', '1', '1');
+INSERT INTO `businessmanager`.`business` (`id`, `name`, `address_id`, `model_id`) VALUES ('2', 'Caviar Distribution', '1', '1');
 INSERT INTO `businessmanager`.`user_business` (`id`, `username`, `business_id`) VALUES ('1', 'admin', '1');
 INSERT INTO `businessmanager`.`user_business` (`id`, `username`, `business_id`) VALUES ('2', 'admin', '2');
 

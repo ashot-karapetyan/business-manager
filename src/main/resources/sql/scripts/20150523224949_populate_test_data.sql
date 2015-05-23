@@ -1,5 +1,5 @@
--- // populate test data
--- Migration SQL that makes the change goes here.
+--// populate test data
+--Migration SQL that makes the change goes here.
 DELETE FROM `businessmanager`.`business_product`;
 DELETE FROM `businessmanager`.`business_provider`;
 DELETE FROM `businessmanager`.`business_market`;
@@ -7,9 +7,9 @@ DELETE FROM `businessmanager`.`provider`;
 DELETE FROM `businessmanager`.`product`;
 DELETE FROM `businessmanager`.`market`;
 
-insert  into `market`(`id`,`name`,`address_id`,`market_group_id`,`manager_name`,`manager_phone`) values (1,'??????? ?????',1,NULL,'??????',NULL),(2,'??????? ?????',1,NULL,'????',NULL),(3,'????????? ?????',1,NULL,'?????',NULL),(4,'??????? ?????',1,NULL,'????????',NULL),(5,'????? ?????????',1,NULL,'???????',NULL),(6,'????? ?????? ???',1,NULL,'??????',NULL),(7,'????? ??????',1,NULL,'?????',NULL),(8,'????? ?????',1,NULL,'????',NULL);
-insert  into `product`(`id`,`name`,`unit_id`) values (1,'?????',1),(2,'?????',1),(3,'????????',1),(4,'????????',1),(5,'??????',1);
-insert  into `provider`(`id`,`name`,`address_id`,`manager_name`,`manager_phone`) values (1,'??????? ???',1,'????????','091457896');
+insert  into `market`(`id`,`name`,`address_id`,`market_group_id`,`manager_name`,`manager_phone`) values (1,'Մարալիկ Կրպակ',1,NULL,'',NULL),(2,'Արմավիր Կրպակ',1,NULL,'',NULL),(3,'Կիրովական Կրպակ',1,NULL,'',NULL),(4,'Դիլիջան Կրպակ',1,NULL,'',NULL),(5,'Երևան Թումանյան',1,NULL,'',NULL),(6,'Երևան Տիգրան Մեծ',1,NULL,'',NULL),(7,'Երևան Ռայկոմ',1,NULL,'',NULL),(8,'Մասիս Կրպակ',1,NULL,'',NULL);
+insert  into `product`(`id`,`name`,`unit_id`) values (1,'Իշխան',1),(2,'Թառափ',1),(3,'Խեցգետին',1),(4,'Սառեցված',1),(5,'Ապխտած',1);
+insert  into `provider`(`id`,`name`,`address_id`,`manager_name`,`manager_phone`) values (1,'Չերքեզի ձոր',1,'Գևորգյան','091457896');
 insert  into `business_market`(`business_id`,`market_id`) values (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8);
 insert  into `business_product`(`business_id`,`product_id`) values (1,1),(1,2),(1,3),(1,4),(1,5);
 insert  into `business_provider`(`business_id`,`provider_id`) values (1,1);

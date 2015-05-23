@@ -96,7 +96,7 @@
         <core-scroll-header-panel main>
             <core-toolbar class="toolbar toolbar-primary">
                 <paper-icon-button role="button" tabindex="0" icon="menu" class="hidden-sm" core-drawer-toggle aria-label="menu"></paper-icon-button>
-                <h3>Businesses</h3>
+                <h3>Dashboard</h3>
             </core-toolbar>
             <div class="content">
                 <div horizontal layout wrap around-justified class="welcome">

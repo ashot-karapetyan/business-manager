@@ -1,6 +1,7 @@
 package com.businessmanager.db.dto;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class LogCondition {
@@ -309,6 +310,66 @@ public class LogCondition {
 
         public Criteria andIdNotBetween(Integer value1, Integer value2) {
             addCriterion("log.id not between", value1, value2, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeIsNull() {
+            addCriterion("log.datetime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeIsNotNull() {
+            addCriterion("log.datetime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeEqualTo(Date value) {
+            addCriterion("log.datetime =", value, "datetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeNotEqualTo(Date value) {
+            addCriterion("log.datetime <>", value, "datetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeGreaterThan(Date value) {
+            addCriterion("log.datetime >", value, "datetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("log.datetime >=", value, "datetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeLessThan(Date value) {
+            addCriterion("log.datetime <", value, "datetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeLessThanOrEqualTo(Date value) {
+            addCriterion("log.datetime <=", value, "datetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeIn(List<Date> values) {
+            addCriterion("log.datetime in", values, "datetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeNotIn(List<Date> values) {
+            addCriterion("log.datetime not in", values, "datetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeBetween(Date value1, Date value2) {
+            addCriterion("log.datetime between", value1, value2, "datetime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDatetimeNotBetween(Date value1, Date value2) {
+            addCriterion("log.datetime not between", value1, value2, "datetime");
             return (Criteria) this;
         }
 

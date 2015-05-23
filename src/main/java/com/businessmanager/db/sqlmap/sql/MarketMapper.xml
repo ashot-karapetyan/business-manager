@@ -301,4 +301,13 @@
       #{parm.name}, #{parm.addressId}, #{parm.marketGroupId}, #{parm.managerName}, #{parm.managerPhone}
     </foreach>
   </insert>
+
+    <!--Custom Queries-->
+    <select id="selectMarketsByBusinessId" parameterType="com.businessmanager.db.dto.MarketCondition" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM market INNER JOIN business_market
+        ON market.`id` = business_market.`market_id`
+        WHERE business_market.`business_id` = #{businessId, jdbcType=INTEGER}
+    </select>
 </mapper>

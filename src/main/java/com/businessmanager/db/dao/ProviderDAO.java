@@ -101,4 +101,11 @@ public interface ProviderDAO {
      * @mbggenerated
      */
     void insertList(@Param("recordList") List<ProviderDto> values);
+
+    /**
+     * Select providers by business id.
+     * @param businessId  User business ID.
+     * @return List of provider dto.
+     */
+    List<ProviderDto> selectProvidersByBusinessId(@Param("businessId") Integer businessId);
 }

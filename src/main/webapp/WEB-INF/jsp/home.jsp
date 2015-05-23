@@ -86,7 +86,7 @@
                     <div class="content">
                         <div horizontal layout wrap around-justified class="welcome">
                             <c:forEach var="business" items="${businesses}">
-                                <a href="/dashboard/${business.modelId}/${business.id}">
+                                <a href="/dashboard/${business.modelId}/${business.id}.htm">
                                     <paper-shadow z="3" animated class="card card-min400 card-padded">
                                         <h1 style="margin-bottom: 1.5em;">${business.name}</h1>
                                         <img src="/images/fish-logo.png" style="-webkit-border-radius: 150px;

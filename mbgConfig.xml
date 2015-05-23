@@ -73,6 +73,12 @@
             <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
         </table>
 
+        <table tableName="business_market" alias="business_market"/>
+
+        <table tableName="business_provider" alias="business_provider"/>
+
+        <table tableName="business_product" alias="business_product"/>
+
         <table tableName="product" alias="product">
             <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
         </table>

@@ -101,4 +101,11 @@ public interface ProductDAO {
      * @mbggenerated
      */
     void insertList(@Param("recordList") List<ProductDto> values);
+
+    /**
+     * Select products by business id.
+     * @param businessId  User business ID.
+     * @return List of product dto.
+     */
+    List<ProductDto> selectProductsByBusinessId(@Param("businessId") Integer businessId);
 }

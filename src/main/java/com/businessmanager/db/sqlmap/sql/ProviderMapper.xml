@@ -285,4 +285,14 @@
       #{parm.name}, #{parm.addressId}, #{parm.managerName}, #{parm.managerPhone}
     </foreach>
   </insert>
+
+    <!--Custom Queries-->
+    <select id="selectProvidersByBusinessId" parameterType="com.businessmanager.db.dto.ProviderCondition" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM provider INNER JOIN business_provider
+        ON provider.`id` = business_provider.`provider_id`
+        WHERE business_provider.`business_id` = #{businessId, jdbcType=INTEGER}
+    </select>
+
 </mapper>

@@ -101,4 +101,11 @@ public interface MarketDAO {
      * @mbggenerated
      */
     void insertList(@Param("recordList") List<MarketDto> values);
+
+    /**
+     * Select markets by business id.
+     * @param businessId  User business ID.
+     * @return List of markets dto.
+     */
+    List<MarketDto> selectMarketsByBusinessId(@Param("businessId") Integer businessId);
 }

@@ -1,8 +1,12 @@
 <polymer-element name="di-form" on-keypress="{{keypressHandler}}" assetpath="/bower_components/di-form/">
+    <style>
+
+    </style>
     <template>
         <form>
             <content></content>
-
+            <div>Markets <div style="visibility: {{bool}}"></div> </div>
+            <div onclick="{{sort}}"></div>
             <core-signals on-core-signal-submit="{{submitHandler}}"></core-signals>
         </form>
     </template>
@@ -10,6 +14,9 @@
         Polymer("di-form", {
             publish: {
                 valid:false
+            },
+            sort: function() {
+                bool = true;
             },
             domReady: function() {
                 var decorators = this.getDecorators();

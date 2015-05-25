@@ -31,4 +31,8 @@ public class BusinessService {
     public List<ProductDto> getBusinessProducts(Integer businessId) {
         return businessDBManager.fetchBusinessProducts(businessId);
     }
+
+    public BusinessDto getBusinessById(Integer businessId) {
+        return businessDBManager.fetchBusinessById(businessId);
+    }
 }

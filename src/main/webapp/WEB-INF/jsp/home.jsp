@@ -86,15 +86,15 @@
                     <div class="content">
                         <div horizontal layout wrap around-justified class="welcome">
                             <c:forEach var="business" items="${businesses}">
-                                <a href="/dashboard/${business.modelId}/${business.id}.htm">
-                                    <paper-shadow z="3" animated class="card card-min400 card-padded">
-                                        <h1 style="margin-bottom: 1.5em;">${business.name}</h1>
-                                        <img src="/images/fish-logo.png" style="-webkit-border-radius: 150px;
-                                         -moz-border-radius: 150px; width: 50%; float:left; margin: -20px 20px 0 0;">
-                                        <p style="color: #000;">${business.description}</p>
-                                        <div class="panel-body"></div>
-                                    </paper-shadow>
-                                </a>
+                                <paper-shadow z="3" animated style="  cursor: pointer;"
+                                              onclick="post('/dashboard.htm', ${business.modelId}, ${business.id})"
+                                              class="card card-min400 card-padded">
+                                    <h1 style="margin-bottom: 1.5em; color: #009688;">${business.name}</h1>
+                                    <img src="/images/fish-logo.png" style="-webkit-border-radius: 150px;
+                                     -moz-border-radius: 150px; width: 50%; float:left; margin: -20px 20px 0 0;">
+                                    <p style="color: #000;">${business.description}</p>
+                                    <div class="panel-body"></div>
+                                </paper-shadow>
                             </c:forEach>
                         </div>
                         <paper-fab role="button" tabindex="0" icon="add" class="fab-bottom" aria-label="add"></paper-fab>
@@ -119,7 +119,29 @@
                         }
                     });
                 }
+            };
+
+            function post(path, modelId, businessId) {
+                var form = document.createElement("form");
+                form.setAttribute("method", "POST");
+                form.setAttribute("action", path);
+
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", "modelId");
+                hiddenField.setAttribute("value", modelId);
+                form.appendChild(hiddenField);
+
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", "businessId");
+                hiddenField.setAttribute("value", businessId);
+                form.appendChild(hiddenField);
+
+                document.body.appendChild(form);
+                form.submit();
             }
+
         </script>
     </body>
 </html>

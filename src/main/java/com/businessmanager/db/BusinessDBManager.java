@@ -41,4 +41,8 @@ public class BusinessDBManager {
     public List<ProductDto> fetchBusinessProducts(Integer businessId) {
         return productDAO.selectProductsByBusinessId(businessId);
     }
+
+    public BusinessDto fetchBusinessById(Integer businessId) {
+        return businessDAO.selectByPrimaryKey(businessId);
+    }
 }

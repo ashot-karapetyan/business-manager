@@ -19576,11 +19576,6 @@ h1,h2,h3,h4,h5,h6
     color:#009688;
     /*text-decoration:underline*/
 }
-.page-content
-{
-    padding:10px;
-    margin-bottom:150px
-}
 .logo
 {
     width:152px;
@@ -20818,6 +20813,11 @@ html /deep/ .type-caption
     background-color:#ffffff;
     margin-bottom:30px
 }
+
+.card-details {
+    margin-bottom:1px
+}
+
 .card-accent
 {
     background-color:#ff9100;
@@ -20849,8 +20849,9 @@ html /deep/ .type-caption
 {
     width:100%;
     max-width:400px;
-    min-width: 350px;
+    /*min-width: 350px;*/
 }
+
 .card-padded
 {
     padding:25px 25px 70px 25px
@@ -23745,7 +23746,7 @@ html /deep/ .type-caption
 }
 .toolbar-primary
 {
-    background-color:#009688;
+    background-color:#00796b;
     color:#ffffff
 }
 .toolbar-primary .narrow .toolbar-item
@@ -24335,3 +24336,58 @@ html /deep/ .type-caption
 {
     background-position:0 -252px
 }
+
+
+@media (min-width: 767px) {
+    .hide {
+        display: none;
+    }
+
+    .page-content-min {
+        margin-left: 2px;
+    }
+}
+
+@media (max-width: 650px) {
+    .hide-details {
+        display: none !important;
+    }
+}
+
+@media (min-width: 650px) {
+    .details-back-btn {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .hide-min-phone-mode {
+        display: none;
+    }
+}
+
+.page-content {
+    margin-bottom:150px;
+    min-height: 400px;
+}
+
+.core-selected > paper-item {
+    background-color: rgba(183, 229, 232, 0.34);
+    color: #00796b;
+    font-weight: bold;
+    border-left: 2px solid #00796b;
+}
+
+.trending-up {
+    color: green;
+}
+
+.trending-down {
+    color: red;
+}
+
+.trending-neutral {
+    color: black;
+}
+
+
